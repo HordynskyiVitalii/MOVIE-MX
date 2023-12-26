@@ -3,7 +3,7 @@ head title {
     display: none;
 }
 body {
-    width: 0;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
@@ -26,15 +26,13 @@ button{
 }
 
 /* Header Styles */
-header {
-    height: 879px;
-    flex-shrink: 0;
+
+.header {
     position: relative;
     display: flex;
 }
 
 .header-img {
-    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -79,7 +77,6 @@ header {
 .item-contact {
     font-size: 26px;
     font-weight: 600;
-    line-height: normal;
     text-transform: uppercase;
 }
 
@@ -93,13 +90,11 @@ header {
 }
 
 /* Header Nav Icons Styles */
-.header-nav-icons {
-    list-style: none;
-    margin-left: 107px;
-    display: flex;
-    position: relative;
-}
 
+
+.header-nav-select{
+
+}
 .icons-soc {
     margin-top: 51px;
     list-style: none;
@@ -125,14 +120,13 @@ header {
     fill: #FFF;
 }
 .header-icons-play{
-margin-left: -1150px;
+    position: relative;
+    margin-left: 870px;
+    margin-top: 299px;
 }
 .icons-play {
-    cursor: pointer;
-    display: flex;
     list-style: none;
-    margin-top: 388px;
-    position: absolute;
+display: flex;
 }
 
 .icon-play-ellipse {
@@ -143,19 +137,19 @@ margin-left: -1150px;
     stroke: rgba(231, 231, 231, 0.30);
     backdrop-filter: blur(7.01022481918335px);
     flex-shrink: 0;
-    /* position: relative; */
+    position: absolute;
+    z-index: -1;
 }
 
 .icon-play-bxs {
     margin-left: 56.1px;
     margin-top: 46.1px;
     fill: #5D737E;
-    position: absolute;
     flex-shrink: 0;
-    z-index: 2;
 }
 
 /* Modal Styles */
+
 .header-select{
     outline-style: none;
     border: none;
@@ -175,7 +169,6 @@ margin-left: -1150px;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
-    /* z-index: -1; */
     clip-path: polygon(0% 0%, 0% 0%, 0% 400%, 100% calc(100% - 38px));
 }
 .select-container {
@@ -192,20 +185,12 @@ height: 14px;
 flex-shrink: 0;
 }
 
-.btn-off {
-    margin-top: 5px;
-    margin-left: 140px;
-    cursor: pointer;
-    border: none;
-    background: none;
-    height: 14px;
-    width: 23px;
-}
 
 /* Hero Styles */
+
 .hero {
     margin-left: 601px;
-    margin-top: 60px;
+    margin-top: 420px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
