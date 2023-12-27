@@ -38,4 +38,20 @@ $response = ['message' => $message];
 
 header('Content-type: application/json');
 echo json_encode($response);
+
+try {
+    if (!$mail->send()) {
+        throw new \Exception($mail->ErrorInfo);
+    } else {
+        $message = 'Message sent';
+    }
+} catch (\Exception $e) {
+    $message = 'Error: ' . $e->getMessage();
+}
+
+$response = ['message' => $message];
+
+header('Content-type: application/json');
+echo json_encode($response);
+
 ?>
