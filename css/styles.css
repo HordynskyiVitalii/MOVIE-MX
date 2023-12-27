@@ -527,19 +527,6 @@ text-transform: uppercase;
 .form-body {
     position: relative;
 }
-.form-body::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(51, 51, 51, 0.9) url;
-}
-
-/* ._sending {
-
-} */
 .form-lable {
     padding-left: 19px;
     color: var(--Gray-text, #313131);
