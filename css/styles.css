@@ -91,10 +91,6 @@ button{
 
 /* Header Nav Icons Styles */
 
-
-.header-nav-select{
-
-}
 .icons-soc {
     margin-top: 51px;
     list-style: none;
@@ -154,7 +150,6 @@ display: flex;
     outline-style: none;
     border: none;
     cursor: pointer;
-    z-index: 1;
     margin-left: 107px;
     margin-top: 51px;
     padding-left: 20px;
@@ -435,7 +430,9 @@ flex-shrink: 0;
 }
 
 .section-one-icon {
+    align-self: flex-start;
     padding-right: 15px;
+    padding-top: 9px;
 }
 
 /* -----------sectoin-two---------- */
@@ -448,9 +445,6 @@ flex-shrink: 0;
     border-radius: 47px;
     background: linear-gradient(108deg, #4A5759 53.37%, rgba(115, 188, 200, 0.93) 94.71%);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.10), 0px 8px 8px 0px rgba(0, 0, 0, 0.09), 0px 19px 11px 0px rgba(0, 0, 0, 0.05), 0px 33px 13px 0px rgba(0, 0, 0, 0.01), 0px 52px 14px 0px rgba(0, 0, 0, 0.00);
-}
-
-.section-two-content {
 }
 
 .section-two-title {
@@ -522,74 +516,120 @@ font-weight: 700;
 line-height: normal;
 text-transform: uppercase;
 }
-.footer-input-content {
+.footer-form {
+    margin-top: 68px;
+    margin-left: 703px;
     display: flex;
-    flex-direction: column;
-    align-items: left;
     justify-content: center;
-    max-width: 515px;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-.label-text {
-    margin-left: 20px;
-    padding-top: 10px;
+   max-width: 515px;
+    margin: 0px, auto;
+}
+.form-body {
+    position: relative;
+}
+.form-body::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.9) url;
+}
+
+/* ._sending {
+
+} */
+.form-lable {
+    padding-left: 19px;
     color: var(--Gray-text, #313131);
     font-size: 20px;
     font-weight: 300;
 }
-.message{
-    margin-top: 90px;
+._error {
 }
 .lable-star {
-    color: var(--Gray-text, #594a4a);
-font-size: 20px;
-font-weight: 300;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--Gray-text, #4A5759);
 }
-.footer-input {
-    padding-left: 10px;
-    border: none;
-    outline: none;
+.form-input {
+    border-radius: 5px;
+    width: 350px;
+    height: 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: all 0.5s ease 0s;
+}
+.form-input {
+   box-shadow: 0 0 15px #007bff;
+}
+.form-input._error{
+    box-shadow: 0 0 15px #d31111;
 }
 
-.footer-line {
-    width: 515px;
-height: 2px;
-background: #313131;
-margin-bottom: 56px;
+._email{
+    font-style: italic;
 }
-.checkbox-container{
-    display: inline-flex;
+.phone {
+    margin-left: 28px;
+}
+._req {
+}
+.form-line {
+    margin-bottom: 56px;
+    width: 515px;
+    height: 2px;
+    background-color: #313131;
+}
+
+._email {
+}
+
+.message {
+    margin-top: 130px;
+    margin-left: 10px;
+    resize: vertical;
+}
+.checkbox-container {
+    margin-top: -22px;
+    display: flex;
     align-items: center;
-    margin-left: 73px;
-    margin-top: -21px;
-    margin-bottom: 51px;
+    justify-content: center;
 }
 .input-checkbox {
-    margin-right: 10px;
     width: 18px;
-height: 18px;
-flex-shrink: 0;
-border-radius: 6px;
-border: 1px solid var(--Gray-text, #313131);
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid var(--Gray-text, #313131);
+}
+.input-checkbox:checked {
+    box-shadow: none; /* Відміняє підсвічування, якщо чекбокс відмічено */
+}
+.input-checkbox:not(:checked) {
+    box-shadow: 0 0 15px #d31111;
 }
 .input-checkbox-text {
     color: var(--Gray-text, #313131);
-font-size: 16px;
-font-weight: 300;
+    font-size: 16px;
+    font-weight: 300;
+}
+.input-checkbox:not(:checked) + .input-checkbox-text {
+    color: #d31111; /* Змініть колір тексту, який вам потрібно, коли є помилка */
 }
 .footer-buttom {
-    cursor: pointer;
     margin-left: 179px;
+    margin-top: 51px;
     width: 156px;
-height: 55px;
-flex-shrink: 0;
-border-radius: 16px;
-background: var(--Gray-color, #4A5759);
-backdrop-filter: blur(12.5px);
-color: #FFF;
-font-size: 24px;
-font-weight: 700;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: var(--Gray-color, #4A5759);
+    backdrop-filter: blur(12.5px);
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 700;
 }
 .footer-contacts {
     margin-top: 103px;

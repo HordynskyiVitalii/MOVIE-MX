@@ -1,41 +1,71 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     const modal = document.querySelector('.modal');
-//     const btnOpenModal = document.getElementById('openModalBtn');
-//     const btnCloseModal = document.getElementById('modalCloseBtn');
-    
-//     const openModal = () => {
-//         modal.style.display = 'block';
-//     };
-    
-//     const closeModal = () => {
-//         modal.style.display = 'none';
-//         changeLanguage();
-//     };
-    
-//     btnOpenModal.addEventListener('click', openModal);
-//     btnCloseModal.addEventListener('click', closeModal);
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('form');
+form.addEventListener('submit', formSend);
 
-//     const modalLangItems = document.querySelectorAll('.modal-lang');
-//     let selectedLang = ''; 
+async function formSend(e) {
+    e.preventDefault();
 
-//     modalLangItems.forEach((item) => {
-//         item.addEventListener('click', () => {
-//             selectedLang = item.textContent; // Отримати текст елементу, а не атрибут
-//             closeModal();
-//         });
-//     });
-//     function changeLanguage() {
-//         // Встановити атрибут lang на тегу <html>
-//         document.documentElement.lang = selectedLang;
-//         console.log(`Selected language: ${selectedLang}`);
-//         // Тут ви також можете викликати інші функції для зміни контенту на сторінці залежно від обраної мови
-//     }
-    
-//     // Приклад виклику функції changeLanguage
-//     changeLanguage();
-    
-// });
+    let error = formValidate(form);
 
+    let formData = new FormData(form);
 
-    
+    if(error === 0) {
+        form.classList.add('_sending');
+        let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+        });
+        if (response.ok) {
+            let result = await response.json();
+            alert(result.message);
+            formPreview.innerHTML = '';
+            form.reset();
+        } else {
+            alert("Error")
+        }
+    } else {
+        alert('Fill in the required fields*')
+    }
+}
 
+function formValidate(form) {
+    let error = 0;
+    let formReq = document.querySelectorAll('._req');
+
+    for (let index = 0; index < formReq.length; index++) {
+        const input = formReq[index];
+        formRemoveError(input);
+
+        if (input.classList.contains('_email')) {
+            if (_emailTest(input)) {
+                formAddError(input);
+                error++;
+            }
+        } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+            formAddError(input);
+            error++;
+        } else {
+            if (input.value === '') {
+                formAddError(input);
+                error++;
+            }
+        }
+    }
+    return error;
+}
+function formAddError(input) {
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+}
+function formAddError(input) {
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+}
+function formRemoveError(input) {
+    input.parentElement.classList.remove('_error');
+    input.classList.remove('_error');
+}
+function _emailTest(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+});

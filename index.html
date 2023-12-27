@@ -156,7 +156,7 @@
                     </svg>live-streaming</li>
                     <li class="list-text"><svg height="25" width="25" class="section-one-icon">
                         <use href="./images/icons.svg#icon-Groups"></use>
-                    </svg>extensive array of production services</li>
+                    </svg>extensive array of production <br>services</li>
                 </ul>
             </div>
         </div>
@@ -181,54 +181,72 @@
         </section>
     </main>
     <footer class="footer">
-        <h1 class="footer-title">Contact </h1>
-            <div class="footer-icons-right">
-                <svg class="footer-icon-vector">
-                    <use href="./images/icons.svg#icon-Vector-top"></use>
-                </svg>
-                <svg class="footer-icon-vector">
-                    <use href="./images/icons.svg#icon-Vector-top"></use>
-                </svg>
-                <p class="footer-icons-vector-text">up</p>
-            </div>
-            <div class="footer-input-content">
-                <label class="label-text">Name<span class="lable-star">*</span><input class="footer-input" type="text"></label>
-                    <div class="footer-line"></div>
-                <label class="label-text">Email<span class="lable-star">*</span><input class="footer-input" type="text"></label>
-                    <div class="footer-line"></div>
-                <label class="label-text">Phone<input class="footer-input" type="text"></label>
-                    <div class="footer-line"></div>
-                <label class="label-text message">Message<input class="footer-input" type="text"></label>
-                    <div class="footer-line"></div>
-                    <div class="checkbox-container">
-                        <input class="input-checkbox" type="checkbox" name="" id="">
-                        <p class="input-checkbox-text">I would like to receive the newsletter.</p>
-                    </div>
-                <button class="footer-buttom" type="button" id="myButtom">Submit</button>
-            </div>
-            <div class="footer-contacts">
-                <ul class="footer-icons-soc">
-                    <li class="footer-icon-background">
-                        <svg class="icon-linkedin" height="31.111" width="31.111">
-                            <use href="./images/icons.svg#icon-ri_linkedin"></use>
-                        </svg>
-                    </li>
-                    <li class="footer-icon-background">
-                        <svg class="icon-twitter" height="27.22" width="27.22">
-                            <use href="./images/icons.svg#icon-x-twitter"></use>
-                        </svg>
-                    </li>
-                </ul>
-            </div>    
-                <div class="footer-mailco">
-                    <p class="footer-contacts-text">© 2023 MOVIE MEX INTERNATIONAL, INC.</p>
-                    <svg class="footer-icon-mailco" height="24" width="30">
-                        <use href="./images/icons.svg#icon-Email"></use>
-                    </svg>
-                    <p class="footer-text-mailco">alejandro@moviemexusa.com</p>
+        <h1 class="footer-title">Contact</h1>
+        <div class="footer-icons-right">
+            <svg class="footer-icon-vector">
+                <use href="./images/icons.svg#icon-Vector-top"></use>
+            </svg>
+            <svg class="footer-icon-vector">
+                <use href="./images/icons.svg#icon-Vector-top"></use>
+            </svg>
+            <p class="footer-icons-vector-text">up</p>
+        </div>
+        <div class="footer-form">
+            <form action="#" id="form" class="form-body">
+                <div class="name-container">
+                    <label for="formName" class="form-lable _error">Name<span class="lable-star">*</span></label>
+                    <input id="formName" name="name" class="form-input _req" type="text">
+                    <div class="form-line"></div>
                 </div>
-            
+                <div class="email-container">
+                    <label for="formEmail" class="form-lable _error">E-mail<span class="lable-star">*</span></label>
+                    <input id="formEmail" class="form-input _req _email" type="text">
+                    <div class="form-line"></div>
+                </div>
+                <div class="phone-container">
+                    <label for="formPhone" class="form-lable">Phone</label>
+                    <input id="formPhone" class="form-input phone" type="text">
+                    <div class="form-line"></div>
+                </div>
+                <div class="message-container">
+                    <label for="formMessage" class="form-lable">Message</label>
+                    <textarea name="message" class="form-input message" id="formMessage"></textarea>
+                    <div class="form-line"></div>
+                </div>    
+                <div class="checkbox-container">
+                    <input id="formAgreement" class="input-checkbox _req _error" checked type="checkbox" name="agreement">
+                    <label for="formAgreement" class="input-checkbox-text">I would like to receive the newsletter.</label>
+                </div>
+    
+                <button class="footer-buttom" type="submit" id="myButtom">Submit</button>
+            </form>
+        </div>
+    
+        <div class="footer-contacts">
+            <ul class="footer-icons-soc">
+                <li class="footer-icon-background">
+                    <svg class="icon-linkedin" height="31.111" width="31.111">
+                        <use href="./images/icons.svg#icon-ri_linkedin"></use>
+                    </svg>
+                </li>
+    
+                <li class="footer-icon-background">
+                    <svg class="icon-twitter" height="27.22" width="27.22">
+                        <use href="./images/icons.svg#icon-x-twitter"></use>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="footer-mailco">
+            <p class="footer-contacts-text">© 2023 MOVIE MEX INTERNATIONAL, INC.</p>
+            <svg class="footer-icon-mailco" height="24" width="30">
+                <use href="./images/icons.svg#icon-Email"></use>
+            </svg>
+            <p class="footer-text-mailco">alejandro@moviemexusa.com</p>
+        </div>
     </footer>
+    
     <script src="./js/index.js"></script>
 </body>
 </html>
