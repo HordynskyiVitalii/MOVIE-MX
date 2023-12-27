@@ -13,7 +13,8 @@ async function formSend(e) {
         form.classList.add('_sending');
         let response = await fetch('sendmail.php', {
             method: 'POST',
-            body: formData
+            body: formData,
+            mode: 'no-cors'
         });
         if (response.ok) {
             let result = await response.json();
