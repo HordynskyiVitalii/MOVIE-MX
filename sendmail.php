@@ -12,21 +12,21 @@ $mail->IsHTML(true);
 
 $mail->setFrom('info@fls.guru', 'Фрілансер');
 $mail->addAddress('plantych88@gmail.com');
-$mail->Subjekt = 'Привіт';
+$mail->Subject = 'Привіт';
 
 $body = '';
 
 if(trim(!empty($_POST['name']))) {
-    $body.='<p><strong>Name:</strong> '.$_POST['name'].'/p>';
+    $body.='<p><strong>Name:</strong> '.$_POST['name'].'</p>';
 }
 if(trim(!empty($_POST['email']))) {
-    $body.='<p><strong>Name:</strong> '.$_POST['email'].'/p>';
+    $body.='<p><strong>Email:</strong> '.$_POST['email'].'</p>';
 }
 if(trim(!empty($_POST['message']))) {
-    $body.='<p><strong>Name:</strong> '.$_POST['message'].'/p>';
+    $body.='<p><strong>Message:</strong> '.$_POST['message'].'</p>';
 }
 
-$mail->Boby = $body;
+$mail->Body = $body;
 
 if (!$mail->send()) {
     $message = 'Error';
